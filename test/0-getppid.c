@@ -12,6 +12,6 @@ int main(void)
 
 	pid = getpid();
 	ppid = getppid();
-	printf("PPID: %u\nPID: %u\n", ppid, pid);
+	printf("PPID: %hd\nPID: %hd\n", ppid, pid);
 	return (0);
 }
