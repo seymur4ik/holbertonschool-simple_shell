@@ -16,8 +16,7 @@ void query_formatter(char *query, char *temp, int *status)
 	{
 		if (stat(matrix[0], &st) != 0)
 		{
-			matrix_freear(matrix);
-			free(temp);
+			matrix_freear(matrix), free(temp);
 			return;
 		}
 		path = strdup(query);

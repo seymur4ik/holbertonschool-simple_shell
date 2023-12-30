@@ -8,7 +8,7 @@
 */
 char *get_path(char **matrix, char *query)
 {
-	struct  stat st;
+	struct stat st;
 	char *path = getenv("PATH"), *copyenv = NULL, *token = NULL, *f_path = NULL;
 
 	if (path == NULL || strlen(path) == 0)

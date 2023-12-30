@@ -3,7 +3,6 @@
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
-- [Custom Commands](#custom commands)
 - [Authors](#authors)
 
 # Overview

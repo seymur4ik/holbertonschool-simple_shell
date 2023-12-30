@@ -12,10 +12,7 @@ void execute(char **matrix, char *path, int *status, char *temp)
 	pid_t pid = fork();
 
 	if (pid == -1)
-	{
-		free(temp);
-		perror("Error");
-	}
+		free(temp), perror("Error");
 	else if (pid == 0)
 	{
 		if (execve(path, matrix, environ) == -1)
