@@ -1,0 +1,69 @@
+echo "
+
+.\" Manpage for Simple Shell
+.TH SIMPLE_SHELL 1 "2023-12-30" "0.01-dust-shell"
+
+.SH NAME
+simple_shell - simple UNIX command interpreter.
+
+.SH DESCRIPTION
+The \fBsimple_shell\fR is a DIY UNIX command interpreter.
+
+.SH RETURN VALUE
+Returns on success:
+.br
+<stdout> Result of inputted command.
+.br
+<stderr> 0
+.br
+Returns on error:
+.br
+<stdout> Error text
+.br
+<stderr> status code (127 - file not found; 1 - failure; 2 - ls cannot access)
+
+.SH FORMATS
+Interpreter supports 2 modes:
+
+.TP
+\fBInteractive\fR
+.br
+\fB./simple_shell\fR
+.br
+Waits for input from the user.
+
+.TP
+\fBNon-interactive\fR
+.br
+\fBecho "ls" | ./simple_shell\fR
+.br
+Lists files in the directory and exits.
+
+.SH EXAMPLE
+.P
+\fBecho "ls" | ./simple_shell\fR
+.br
+Output:
+\fBfile1 file2 main.c\fR
+.P
+
+.SH REPORTING BUGS
+They exist.
+
+.SH AUTHORS
+Javid Jalilov
+.br
+Seymur Huseynzade
+.br
+And thanks to Ravan Asadov and Tunjay Isgandarli for help with project
+
+.SH COPYRIGHTS
+donate, please
+
+.SH SEE ALSO
+.B man
+
+" > _hsh.1
+mv _hsh.1 /usr/local/man/man1/
+gzip -f /usr/local/man/man1/_hsh.1
+man _hsh
