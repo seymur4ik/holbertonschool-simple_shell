@@ -14,12 +14,10 @@ char *get_path(char **matrix, char *query)
 	if (path == NULL || strlen(path) == 0)
 	{
 		fprintf(stderr, "./hsh: 1: %s: not found\n", matrix[0]);
-		free(query);
-		matrix_freear(matrix);
+		free(query), matrix_freear(matrix);
 		exit(127);
 	}
-	copyenv = strdup(path);
-	token = strtok(copyenv, ":");
+	copyenv = strdup(path), token = strtok(copyenv, ":");
 	f_path = malloc(sizeof(char) * SIZE);
 	while (token != NULL)
 	{
